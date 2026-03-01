@@ -21,13 +21,13 @@ jobs:
 
       - name: Build & Push Frontend
         run: |
-          docker build -t harshitborana75146/shopping_web/react-app ./client
-          docker push harshitborana75146/shopping_web/react-app
+          docker build -t harshitborana75146/shopping_web:frontend ./client
+          docker push harshitborana75146/shopping_web:frontend
 
       - name: Build & Push Backend
         run: |
-          docker build -t harshitborana75146/shopping_web/node-app ./server
-          docker push harshitborana75146/shopping_web/node-app
+          docker build -t harshitborana75146/shopping_web:backend ./server
+          docker push harshitborana75146/shopping_web:backend
 
       - name: SSH into EC2 and Deploy
         uses: appleboy/ssh-action@master
