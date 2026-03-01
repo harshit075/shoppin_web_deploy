@@ -21,13 +21,13 @@ jobs:
 
       - name: Build & Push Frontend
         run: |
-          docker build -t yourdockerhub/react-app ./client
-          docker push yourdockerhub/react-app
+          docker build -t harshitborana75146/shopping_web/react-app ./client
+          docker push harshitborana75146/shopping_web/react-app
 
       - name: Build & Push Backend
         run: |
-          docker build -t yourdockerhub/node-app ./server
-          docker push yourdockerhub/node-app
+          docker build -t harshitborana75146/shopping_web/node-app ./server
+          docker push harshitborana75146/shopping_web/node-app
 
       - name: SSH into EC2 and Deploy
         uses: appleboy/ssh-action@master
@@ -36,6 +36,6 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd project-folder
+            cd shop_web
             docker-compose pull
             docker-compose up -d --remove-orphans
