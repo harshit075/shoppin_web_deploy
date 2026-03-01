@@ -36,6 +36,6 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd shop_web
-            docker-compose pull
-            docker-compose up -d --remove-orphans
+            cd /home/ubuntu/shop_web
+            docker compose pull
+            docker compose up -d --remove-orphans
