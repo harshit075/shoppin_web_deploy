@@ -21,12 +21,12 @@ jobs:
 
       - name: Build & Push Frontend
         run: |
-          docker build -t yourdockerhub/react-app ./frontend
+          docker build -t yourdockerhub/react-app ./client
           docker push yourdockerhub/react-app
 
       - name: Build & Push Backend
         run: |
-          docker build -t yourdockerhub/node-app ./backend
+          docker build -t yourdockerhub/node-app ./server
           docker push yourdockerhub/node-app
 
       - name: SSH into EC2 and Deploy
